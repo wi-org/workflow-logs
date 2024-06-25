@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       hash: ${{ steps.out.outputs.stdout }}
+      print: ${{ steps.print.outputs.test }}
     steps:
       - name: Script
         id: script
@@ -32,6 +33,7 @@ jobs:
         id: print
         run: |
           cat gh_output.txt
+          echo "test=$(cat gh_output.txt)" >> "$GITHUB_OUTPUT"
 
       # - name: Check
       #   id: check
@@ -45,5 +47,6 @@ jobs:
       - run: |
           echo ${{steps.Run-GitHub-Actions.outputs.hash}} > ipfs-hash.txt
           cat ipfs-hash.txt
+          echo ${{steps.Run-GitHub-Actions.outputs.print}} > gh_output.txt
           cat gh_output.txt
           
