@@ -9,7 +9,7 @@ jobs:
   Run-GitHub-Actions:
     runs-on: ubuntu-latest
     outputs:
-      hash: ${{ steps.out.outputs.hash }}
+      hash: ${{ steps.out.outputs }}
     steps:
       - name: Script
         id: script
