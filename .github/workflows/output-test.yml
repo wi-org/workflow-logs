@@ -12,7 +12,7 @@ jobs:
       - name: Script
         id: script
         run: |
-          script -q gh_output.txt
+          script gh_output.txt
           
       - name: Output
         id: out        
