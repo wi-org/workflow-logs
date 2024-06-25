@@ -9,6 +9,11 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+      - name: Script
+        id: script
+        run: |
+          script -q gh_output.txt
+          
       - name: Output
         id: out        
         run: |
@@ -18,4 +23,5 @@ jobs:
       - name: Print
         id: print
         run: |
-          echo ${{ fromjson(steps.out.outputs) }}
+          exit
+          cat gh_output.txt
