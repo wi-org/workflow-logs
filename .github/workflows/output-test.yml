@@ -23,5 +23,5 @@ jobs:
       - name: Print
         id: print
         run: |
-          exit
+          ls -lr
           cat gh_output.txt
