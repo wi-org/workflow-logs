@@ -45,3 +45,5 @@ jobs:
       - run: |
           echo ${{steps.Run-GitHub-Actions.outputs.hash}} > ipfs-hash.txt
           cat ipfs-hash.txt
+          cat gh_output.txt
+          
