@@ -6,8 +6,10 @@ env:
   stdout: true
   stderr: true
 jobs:
-  Explore-GitHub-Actions:
+  Run-GitHub-Actions:
     runs-on: ubuntu-latest
+    outputs:
+      hash: ${{ steps.out.outputs.hash }}
     steps:
       - name: Script
         id: script
@@ -35,3 +37,9 @@ jobs:
         id: check
         run: |
          grep -w "Missing semicolon" gh_output.txt
+
+  get-GitHub-Actions:
+    runs-on: ubuntu-latest
+    needs: [Run-GitHub-Actions]
+    steps:
+      - run: echo ${{steps.Run-GitHub-Actions.outputs.hash}} > ipfs-hash.txt
