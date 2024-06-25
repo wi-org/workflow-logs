@@ -13,4 +13,4 @@ jobs:
         id: out        
         run: |
          echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-         echo "::debug::Set the Octocat variable"
+         echo "::info::Set the Octocat variable"
