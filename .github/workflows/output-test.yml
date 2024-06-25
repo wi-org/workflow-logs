@@ -20,10 +20,15 @@ jobs:
          echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
          echo "::warning file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
 
+      - name: Exit Script
+        id: ext
+        run: |
+          ls -lr
+          exit
+
       - name: Print
         id: print
         run: |
-          ls -lr
           cat gh_output.txt
 
       - name: Check
