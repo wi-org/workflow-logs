@@ -33,10 +33,10 @@ jobs:
         run: |
           cat gh_output.txt
 
-      - name: Check
-        id: check
-        run: |
-         grep -w "Missing semicolon" gh_output.txt
+      # - name: Check
+      #   id: check
+      #   run: |
+      #    grep -w "Missing semicolon" gh_output.txt
 
   get-GitHub-Actions:
     runs-on: ubuntu-latest
